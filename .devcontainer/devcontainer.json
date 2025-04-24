@@ -1,0 +1,61 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+  "name": "demoapp-dev",
+  "dockerFile": "Dockerfile",
+  "runArgs": [
+    "--env-file",
+    "./.devcontainer/devcontainer.env",
+    "--name",
+    "demoapp-dev",
+    "--rm"
+  ],
+  "features": {
+    // "ghcr.io/devcontainers/features/python:1": {
+    //   "installTools": true,
+    //   "toolsToInstall": "pre-commit"
+    // },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true
+    },
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/git-lfs:1": {}
+  },
+  "postCreateCommand": "bash ./.devcontainer/postCreate.sh",
+  "postStartCommand": "bash ./.devcontainer/postStart.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // for Python
+        "charliermarsh.ruff", // Formatter/Linter
+        "ms-python.python", // Language support
+        "ms-python.vscode-pylance", // Language server (Type checker)
+        "ms-python.debugpy", // Debugger
+        "njpwerner.autodocstring", // Docstring support
+        // for Next.js/Typescript
+        "dbaeumer.vscode-eslint", // Linter
+        "esbenp.prettier-vscode", // Formatter
+        // "biomejs.biome", // Formatter/Linter
+        "VisualStudioExptTeam.vscodeintellicode", // Auto completion
+        "xabikos.JavaScriptSnippets", // Snippets for JavaScript
+        "dsznajder.es7-react-js-snippets", // Snippets for React.js
+        "PulkitGangwar.nextjs-snippets", // Snippets for Next.js
+        "formulahendry.auto-rename-tag", // Auto rename tag
+        "formulahendry.auto-close-tag", // Auto close tag
+        "yoavbls.pretty-ts-errors", // Error messages Refinement
+        "wix.vscode-import-cost", // 3rd-party Package Size Checker
+        "nextnav.nextnav", // Routing Checker
+        // for MISC
+        // "ms-azuretools.vscode-docker", // Docker Support
+        "tamasfe.even-better-toml", // TOML support
+        "eamodio.gitlens", // Git support
+        "ms-vsliveshare.vsliveshare", // Mob works
+        // for LLM
+        "saoudrizwan.claude-dev", // Coding Agent by LLM
+        "continue.continue" // Coding Assistants by LLM
+      ]
+    }
+  }
+}

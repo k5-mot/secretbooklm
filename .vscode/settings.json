@@ -1,0 +1,60 @@
+{
+  // スペースを挿入するかどうか
+  "editor.insertSpaces": true,
+  // タブサイズ
+  "editor.tabSize": 2,
+  // 制御文字を表示するかどうか
+  "editor.renderControlCharacters": true,
+  // 空白文字の表示設定
+  "editor.renderWhitespace": "all",
+  // 保存時にフォーマットするかどうか
+  "editor.formatOnSave": true,
+  // 保存時のコードアクション
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit"
+  },
+  // ファイルの最後に改行を挿入するかどうか
+  "files.insertFinalNewline": true,
+  // ファイルの最後の空行を削除するかどうか
+  "files.trimFinalNewlines": true,
+  // 行末の空白を削除するかどうか
+  "files.trimTrailingWhitespace": true,
+  // ターミナルのデフォルトプロファイル
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  // ターミナルのプロファイル設定
+  "terminal.integrated.profiles.linux": {
+    "zsh": {
+      "path": "/usr/bin/zsh"
+    }
+  },
+  // Gitの自動フェッチを行うかどうか
+  "git.autofetch": true,
+  // 親フォルダのリポジトリを常に開くかどうか
+  "git.openRepositoryInParentFolders": "always",
+  // 拡張機能の推奨を無視するかどうか
+  "extensions.ignoreRecommendations": false,
+  // JavaScript/Reactの設定
+  "[javascript][javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  // TypeScript/Reactの設定
+  "[typescript][typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // CSS/PostCSSの設定
+  "[css][postcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // JSON/JSONCの設定
+  "[json][jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+  },
+  // Pythonの設定
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.tabSize": 4,
+  },
+  // Pythonのパス指定
+  "python.defaultInterpreterPath": "backend/.venv/bin/python",
+}
