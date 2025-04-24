@@ -38,9 +38,19 @@ export default function SourcePanel() {
 
   return (
     <Container>
-      <VStack>
+      <VStack
+        gap={4}
+        px={8}
+        py={4}
+        display="flex"
+        flexDirection="column"
+        alignItems="flex-start"
+      >
         <h2>ソース</h2>
         <p>ドキュメントを追加して分析</p>
+      </VStack>
+
+      <VStack gap={4} py={4}>
         <HStack>
           <Button>
             <SerendieSymbol name="file-upload" variant="outlined" />
