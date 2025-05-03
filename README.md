@@ -1,16 +1,16 @@
 # Miroapp Demo
 
 - Frontend
-  - ReactJS, Mirotone CSS
+  - React.js, Next.js, Serendie Design System
 - Backend
-  - Python, Langchain, Langserve
+  - Python, LangChain, LangServe
   - http://localhost:8000/docs for API documentation
 
-![](./doc/diagram.png)
+<!-- ![](./doc/diagram.png) -->
 
 ## Demo
 
-![](./doc/demo.gif)
+![](./doc/sample.png)
 
 ## Frontend
 

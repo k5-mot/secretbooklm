@@ -1,3 +1,4 @@
+import datetime
 import logging
 import logging.handlers
 import sys
@@ -40,11 +41,11 @@ class AppLogger(logging.Logger):
 
     def get_file_handler(self) -> logging.Handler:
         """Get the file handler for the logger."""
-        handler = logging.handlers.RotatingFileHandler(
+        handler = logging.handlers.TimedRotatingFileHandler(
             filename=self.LOG_FILEPATH,
-            mode="a",
-            maxBytes=10485760,  # 10MB
-            backupCount=5,  # 5 backup files
+            when="midnight",
+            interval=1,
+            backupCount=7,  # 7 backup files
             encoding="utf-8",
         )
         handler.setLevel(self.LOG_LEVEL)
