@@ -1,15 +1,6 @@
-import { Container, HStack, VStack } from "@/styled-system/jsx";
+import { Box, Container, HStack, Spacer, VStack } from "@/styled-system/jsx";
 import { SerendieSymbol } from "@serendie/symbols";
-import { Button, List, ListItem, Search } from "@serendie/ui";
-// import {
-//   Card,
-//   CardContent,
-//   CardDescription,
-//   CardHeader,
-//   CardTitle
-// } from "@/components/ui/card";
-// import { ScrollArea } from "@/components/ui/scroll-area";
-// import { File, FileText, Plus, Trash2, Upload } from "lucide-react";
+import { Button, ChoiceBox, Divider, List, ListItem } from "@serendie/ui";
 
 export default function SourcePanel() {
   const mockFiles = [
@@ -38,36 +29,44 @@ export default function SourcePanel() {
 
   return (
     <Container>
-      <VStack
-        gap={4}
-        px={8}
-        py={4}
-        display="flex"
-        flexDirection="column"
-        alignItems="flex-start"
-      >
-        <h2>ソース</h2>
-        <p>ドキュメントを追加して分析</p>
-      </VStack>
+      <HStack gap={4} px={8} py={4} textAlign="left" w="100%">
+        <Box whiteSpace="nowrap">
+          <h2>ソース</h2>
+        </Box>
 
-      <VStack gap={4} py={4}>
+        <Spacer />
+
+        <VStack justify="right" w="fit-content" maxW="50%">
+          <Box whiteSpace="normal" textAlign="right">
+            <p>ドキュメントを追加して分析</p>
+          </Box>
+        </VStack>
+      </HStack>
+
+      <Divider />
+
+      <VStack gap={4} py={4} w="100%">
         <HStack>
-          <Button>
-            <SerendieSymbol name="file-upload" variant="outlined" />
+          <Button leftIcon={<SerendieSymbol name="file-upload" variant="outlined" />}>
+            アップロード
           </Button>
-          <Search items={[""]}></Search>
         </HStack>
       </VStack>
 
-      <VStack>
-        <List>
+      <Divider />
+
+      <VStack w="100%">
+        <List style={{ width: "95%" }}>
           {mockFiles.map((file) => (
-            <ListItem
-              key={file.id}
-              title={file.filename}
-              description={file.size + "・" + file.total_pages}
-              leftIcon={<SerendieSymbol name="file" variant="outlined" />}
-            ></ListItem>
+            <HStack key={file.id}>
+              <ListItem
+                title={file.filename}
+                description={file.size + "・" + file.total_pages}
+                leftIcon={<SerendieSymbol name="file" variant="outlined" />}
+              />
+              <Spacer />
+              <ChoiceBox type="checkbox" value={String(file.id)} />
+            </HStack>
           ))}
         </List>
       </VStack>
