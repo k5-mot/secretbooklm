@@ -78,4 +78,10 @@ if __name__ == "__main__":
 
     FASTAPI_HOST = os.getenv("FASTAPI_HOST", "localhost")
     FASTAPI_PORT = int(os.getenv("FASTAPI_PORT", "8000"))
-    uvicorn.run(app, host="FASTAPI_HOST", port=FASTAPI_PORT)
+    uvicorn.run(
+        app="main:app",
+        # app=app,
+        host=FASTAPI_HOST,
+        port=FASTAPI_PORT,
+        reload=True,
+    )

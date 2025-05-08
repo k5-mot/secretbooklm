@@ -10,6 +10,6 @@ popd
 printf "\e[34mSetup Frontend environment...\e[0m\n"
 pushd frontend
 npm install
-npm run build
-npm run export
+# npm run build
+# npm run export
 popd

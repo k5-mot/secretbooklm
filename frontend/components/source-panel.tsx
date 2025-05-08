@@ -1,4 +1,4 @@
-import { Box, Container, HStack, Spacer, VStack } from "@/styled-system/jsx";
+import { Box, HStack, Spacer, VStack } from "@/styled-system/jsx";
 import { SerendieSymbol } from "@serendie/symbols";
 import { Button, ChoiceBox, Divider, List, ListItem } from "@serendie/ui";
 
@@ -28,24 +28,24 @@ export default function SourcePanel() {
   ];
 
   return (
-    <Container>
-      <HStack gap={4} px={8} py={4} textAlign="left" w="100%">
-        <Box whiteSpace="nowrap">
-          <h2>ソース</h2>
+    <VStack w="100%" h="100%">
+      {/* Header */}
+      <HStack w="95%" py={8} textAlign="left">
+        <Box whiteSpace="nowrap" style={{ maxWidth: "50%" }}>
+          <h3>ソース</h3>
         </Box>
 
         <Spacer />
 
-        <VStack justify="right" w="fit-content" maxW="50%">
-          <Box whiteSpace="normal" textAlign="right">
-            <p>ドキュメントを追加して分析</p>
-          </Box>
-        </VStack>
+        <Box whiteSpace="normal" textAlign="right" style={{ maxWidth: "50%" }}>
+          <p>ドキュメントを追加して分析</p>
+        </Box>
       </HStack>
 
       <Divider />
 
-      <VStack gap={4} py={4} w="100%">
+      {/* Toolbar */}
+      <VStack w="95%" py={4}>
         <HStack>
           <Button leftIcon={<SerendieSymbol name="file-upload" variant="outlined" />}>
             アップロード
@@ -55,8 +55,9 @@ export default function SourcePanel() {
 
       <Divider />
 
-      <VStack w="100%">
-        <List style={{ width: "95%" }}>
+      {/* List */}
+      <VStack w="95%">
+        <List style={{ width: "100%" }}>
           {mockFiles.map((file) => (
             <HStack key={file.id}>
               <ListItem
@@ -70,6 +71,6 @@ export default function SourcePanel() {
           ))}
         </List>
       </VStack>
-    </Container>
+    </VStack>
   );
 }
