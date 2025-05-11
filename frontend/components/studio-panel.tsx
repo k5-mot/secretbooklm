@@ -29,13 +29,13 @@ export default function StudioPanel() {
     <VStack w={"100%"} h={"100%"}>
       {/* Header */}
       <HStack w="95%" py={8} textAlign="left">
-        <Box whiteSpace="nowrap" style={{ maxWidth: "50%" }}>
+        <Box whiteSpace="nowrap" style={{ maxWidth: "40%" }}>
           <h3>Studio</h3>
         </Box>
 
         <Spacer />
 
-        <Box whiteSpace="normal" textAlign="right" style={{ maxWidth: "50%" }}>
+        <Box whiteSpace="normal" textAlign="right" style={{ maxWidth: "60%" }}>
           <p>アイテムを選択してください</p>
         </Box>
       </HStack>

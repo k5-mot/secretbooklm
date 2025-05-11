@@ -89,32 +89,32 @@ export default function ChatPanel() {
       role: "user",
       content: "U",
       timestamp: new Date()
-    },
-    {
-      id: "13",
-      role: "assistant",
-      content: "A",
-      timestamp: new Date()
-    },
-    {
-      id: "14",
-      role: "user",
-      content: "U",
-      timestamp: new Date()
     }
+    // {
+    //   id: "13",
+    //   role: "assistant",
+    //   content: "A",
+    //   timestamp: new Date()
+    // },
+    // {
+    //   id: "14",
+    //   role: "user",
+    //   content: "U",
+    //   timestamp: new Date()
+    // }
   ]);
 
   return (
     <VStack w="100%" h="100%">
       {/* Header */}
       <HStack w="95%" py={8} textAlign="left">
-        <Box whiteSpace="nowrap" style={{ maxWidth: "50%" }}>
+        <Box whiteSpace="nowrap" style={{ maxWidth: "40%" }}>
           <h3>チャット</h3>
         </Box>
 
         <Spacer />
 
-        <Box whiteSpace="normal" textAlign="right" style={{ maxWidth: "50%" }}>
+        <Box whiteSpace="normal" textAlign="right" style={{ maxWidth: "60%" }}>
           <p>質問を入力してください</p>
         </Box>
       </HStack>
@@ -122,25 +122,42 @@ export default function ChatPanel() {
       <Divider />
 
       {/* Chat history */}
-      <VStack w="90%" flex={1}>
-        {messages.map((message) => (
-          <HStack
-            key={message.id}
-            w="100%"
-            justifyContent={message.role === "user" ? "flex-end" : "flex-start"}
-            py={2}
-          >
-            <Box
-              bg={message.role === "user" ? "#E0F7FA" : "#FFEBEE"}
-              borderRadius="8px"
-              p={4}
-              maxW="70%"
+      <Box
+        w="100%"
+        minH={"0"}
+        flex="1"
+        overflowY="auto"
+        display="flex"
+        flexDirection="column"
+        flexGrow={1}
+        position="relative"
+        // maxH="50vh"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "0" // これが重要: flexコンテナでスクロールするには必要
+        }}
+      >
+        <VStack w="100%">
+          {messages.map((message) => (
+            <HStack
+              key={message.id}
+              w="90%"
+              justifyContent={message.role === "user" ? "flex-end" : "flex-start"}
+              py={2}
             >
-              <p>{message.content}</p>
-            </Box>
-          </HStack>
-        ))}
-      </VStack>
+              <Box
+                bg={message.role === "user" ? "#E0F7FA" : "#FFEBEE"}
+                borderRadius="8px"
+                p={4}
+                maxW="70%"
+              >
+                <p>{message.content}</p>
+              </Box>
+            </HStack>
+          ))}
+        </VStack>
+      </Box>
 
       <Divider />
 
