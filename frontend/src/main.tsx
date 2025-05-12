@@ -1,15 +1,20 @@
+import { CssBaseline } from "@mui/material";
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import About from "./About.tsx";
 import App from "./App.tsx";
-import "./index.css";
+import Home from "./Home.tsx";
+import "./styles/index.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
+    <CssBaseline />
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />} />
-        <Route path='/home' element={<App />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/home' element={<Home />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
