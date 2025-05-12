@@ -11,17 +11,12 @@
     "--rm"
   ],
   "features": {
-    // "ghcr.io/devcontainers/features/python:1": {
-    //   "installTools": true,
-    //   "toolsToInstall": "pre-commit"
-    // },
     "ghcr.io/devcontainers/features/common-utils:2": {
       "installZsh": true,
       "configureZshAsDefaultShell": true,
       "installOhMyZsh": true
     },
     "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/git-lfs:1": {}
   },
   "postCreateCommand": "bash ./.devcontainer/postCreate.sh",
   "postStartCommand": "bash ./.devcontainer/postStart.sh",
