@@ -6,16 +6,16 @@
   "scripts": {
     "dev": "vite --host --debug",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "fmt": "prettier --write src/**/*.{js,jsx,ts,tsx}",
+    "lint": "eslint --fix .",
+    "fmt": "prettier --write src/**/*.{js,jsx,mjs,cjs,ts,tsx}",
     "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@fontsource/roboto": "^5.2.5",
-    "@mui/material": "^7.1.0",
     "@mui/icons-material": "^7.1.0",
+    "@mui/material": "^7.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.0"

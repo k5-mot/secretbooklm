@@ -17,7 +17,7 @@ ENV PATH="${PNPM_HOME}:${PATH}"
 
 # Setup uv (Python).
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
-RUN uv python install 3.12
+RUN uv python install 3.13
 
 # Setup volta (Node.js).
 RUN curl https://get.volta.sh | bash

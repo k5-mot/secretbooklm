@@ -7,15 +7,19 @@ import App from "./App.tsx";
 import Home from "./Home.tsx";
 import "./styles/index.tsx";
 
-createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <CssBaseline />
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<App />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/home' element={<Home />} />
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
-);
+const rootElement = document.getElementById("root");
+
+if (rootElement) {
+  createRoot(rootElement).render(
+    <React.StrictMode>
+      <CssBaseline />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<App />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/home' element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </React.StrictMode>
+  );
+}

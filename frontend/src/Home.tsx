@@ -1,13 +1,12 @@
-import {
-  Book as BookIcon,
-  Description as DescriptionIcon,
-  QuestionAnswer as FaqIcon,
-  InsertDriveFile as FileIcon,
-  Send as SendIcon,
-} from "@mui/icons-material";
+import BookIcon from "@mui/icons-material/Book";
+import DescriptionIcon from "@mui/icons-material/Description";
+import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
+import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
+import SendIcon from "@mui/icons-material/Send";
 import {
   Button,
   Checkbox,
+  Grid,
   IconButton,
   List,
   ListItem,
@@ -17,7 +16,6 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import Grid from "@mui/material/Grid";
 import React from "react";
 
 const Home = () => {
@@ -62,7 +60,7 @@ const Home = () => {
             {documents.map((doc) => (
               <ListItem key={doc.id} disablePadding>
                 <ListItemIcon>
-                  <FileIcon />
+                  <InsertDriveFileIcon />
                 </ListItemIcon>
                 <ListItemText
                   primary={doc.name}
@@ -71,13 +69,13 @@ const Home = () => {
                 <Checkbox
                   edge='end'
                   checked={doc.checked}
-                  onChange={() =>
+                  onChange={() => {
                     setDocuments(
                       documents.map((d) =>
                         d.id === doc.id ? { ...d, checked: !d.checked } : d
                       )
-                    )
-                  }
+                    );
+                  }}
                 />
               </ListItem>
             ))}
@@ -118,7 +116,9 @@ const Home = () => {
               variant='outlined'
               placeholder='Type a message...'
               value={newMessage}
-              onChange={(e) => setNewMessage(e.target.value)}
+              onChange={(e) => {
+                setNewMessage(e.target.value);
+              }}
             />
             <IconButton color='primary' onClick={handleSendMessage}>
               <SendIcon />
@@ -144,10 +144,20 @@ const Home = () => {
           >
             Briefing Document
           </Button>
-          <Button variant='outlined' fullWidth sx={{ mb: 2 }} startIcon={<FaqIcon />}>
+          <Button
+            variant='outlined'
+            fullWidth
+            sx={{ mb: 2 }}
+            startIcon={<QuestionAnswerIcon />}
+          >
             FAQ
           </Button>
-          <Button variant='outlined' fullWidth sx={{ mb: 2 }} startIcon={<FaqIcon />}>
+          <Button
+            variant='outlined'
+            fullWidth
+            sx={{ mb: 2 }}
+            startIcon={<QuestionAnswerIcon />}
+          >
             Timeline
           </Button>
         </Paper>
