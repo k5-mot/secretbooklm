@@ -2,7 +2,7 @@ import { Button, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 
-function About() {
+const About = () => {
   return (
     <React.Fragment>
       <Typography variant='h3' component='h1'>
@@ -20,6 +20,6 @@ function About() {
       </Button>
     </React.Fragment>
   );
-}
+};
 
 export default About;

@@ -1,11 +1,29 @@
-import { Button, Typography } from "@mui/material";
+import { Button, ImageList, ImageListItem, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
+import reactLogo from "/react.svg";
+import viteLogo from "/vite.svg";
 
-function App() {
+const App = () => {
   return (
     <React.Fragment>
       <Typography variant='h1'>TOP</Typography>
+      <ImageList>
+        <ImageListItem>
+          <img
+            src={viteLogo}
+            alt='Vite logo'
+            style={{ width: "100px", height: "100px" }}
+          />
+        </ImageListItem>
+        <ImageListItem>
+          <img
+            src={reactLogo}
+            alt='React logo'
+            style={{ width: "100px", height: "100px" }}
+          />
+        </ImageListItem>
+      </ImageList>
       <Button component={Link} to='/' variant='contained' color='primary'>
         TOP
       </Button>
@@ -17,6 +35,6 @@ function App() {
       </Button>
     </React.Fragment>
   );
-}
+};
 
 export default App;
