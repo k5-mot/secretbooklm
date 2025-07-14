@@ -1,51 +1,51 @@
-# Miroapp Demo
+# SecretbookLM
 
-- Frontend
-  - React.js, Next.js, Serendie Design System
-- Backend
-  - Python, LangChain, LangServe
-  - http://localhost:8000/docs for API documentation
+## 概要
 
-<!-- ![](./doc/diagram.png) -->
+Google NotebookLM のローカルホスト版です。
 
-## Demo
+## 技術スタック
 
-![](./doc/sample.png)
-
-## Frontend
-
-### 開発環境のセットアップ手順
-
-```bash
-npx create-miro-app@latest
-# Name > miroapp-example
-# Framework > React
-# Flavor > Typescript
-mv miroapp-example frontend
-```
-
-### 開発用サーバの起動手順
-
-```bash
-npm install
-npm run build
-# Run on localhost:3000
-```
-
-## Backend
-
-### 開発環境のセットアップ手順
-
-```bash
-
-```
-
-### 開発用サーバの起動手順
-
-```bash
-pip install -r requirements.txt
-python server.py
-# Run on localhost:8000
-```
-
-https://zenn.dev/tyyy/articles/devcontainer_git
+- フロントエンド
+  - React.js
+  - Vite
+  - MUI
+  - Prettier
+  - ESLint
+- バックエンド
+  - Python
+  - uv
+  - FastAPI
+  - LangChain
+  - Mangum
+  - Pandoc
+- インフラ(AWS)
+  - フロントエンド
+    - S3
+    - CloudFront
+  - バックエンド
+    - ECR (Docker イメージ)
+    - Lambda (Docker)
+    - API Gateway
+  - 認証
+    - Cognito
+  - ファイル管理
+    - S3
+  - プロジェクト管理
+    - DynamoDB
+  - IaC
+    - AWS CDK
+- インフラ(ローカル)
+  - フロントエンド
+    - Docker
+  - バックエンド
+    - Docker
+  - 認証
+    - Magnito
+  - ファイル管理
+    - Minio
+  - プロジェクト管理
+    - DynamoDB local
+- 開発環境
+  - devcontainer
+  - Docker-Compose
